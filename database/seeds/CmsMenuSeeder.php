@@ -19,7 +19,7 @@ class CmsMenuSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
 
 
-        factory(\App\User::class, 1)->create(['password'=>bcrypt('2g47'),'email'=>'admin@admin.ru']);
+        factory(\App\Models\CmsModels\User::class, 1)->create(['password'=>bcrypt('2g47'),'email'=>'admin@admin.ru']);
         factory(\App\Models\CmsModels\TypePage::class, 1)->create();
         factory(\App\Models\CmsModels\Page::class, 6)->create();
 

@@ -1,9 +1,15 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "ivankoTut/laravel-rocket-cms",
+    "description": "The LaravelCMS Framework.",
+    "keywords": ["framework", "laravel","LaravelCMS"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ivankoTut/laravel-rocket-cms"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
         "arrilot/laravel-widgets": "^3.7",
@@ -13,7 +19,8 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelrus/sleepingowl": "4.*@dev",
-        "symfony/finder": "^3.2"
+        "symfony/finder": "^3.2",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
