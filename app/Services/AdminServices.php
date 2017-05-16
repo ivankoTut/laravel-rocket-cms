@@ -24,7 +24,7 @@ class AdminServices
         $finder->files()->in(app_path() . '/Models/');
 
         foreach ($finder as $file) {
-            $mFile = explode('app/', $file->getRealPath())[1];
+            $mFile = explode('app' . DIRECTORY_SEPARATOR , $file->getRealPath())[1];
             $mFile = str_replace('/', '\\', $mFile);
             $mFile = str_replace('.php', '', $mFile);
             $mFile = 'App\\' . $mFile;
