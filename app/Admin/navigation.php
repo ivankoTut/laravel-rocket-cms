@@ -9,25 +9,9 @@ return [
         'pages' => app('App\Services\AdminServices')->initAdminMenu('navigate')
     ],
     [
-        'title' => "Content",
-        'icon' => 'fa fa-newspaper-o',
-        'pages' => [
-           /* (new Page(\App\Model\News::class))
-                ->setIcon('fa fa-newspaper-o')
-                ->setPriority(0),
-            (new Page(\App\Model\News2::class))
-                ->setIcon('fa fa-newspaper-o')
-                ->setPriority(10),
-            (new Page(\App\Model\News3::class))
-                ->setIcon('fa fa-newspaper-o')
-                ->setPriority(20),
-            (new Page(\App\Model\News4::class))
-                ->setIcon('fa fa-newspaper-o')
-                ->setPriority(30),
-            (new Page(\App\Model\News5::class))
-                ->setIcon('fa fa-newspaper-o')
-                ->setPriority(40)*/
-        ]
+        'title' => trans('cms.admin.nav.account'),
+        'icon' => 'fa fa-vcard',
+        'pages' => app('App\Services\AdminServices')->initAdminMenu('users')
     ],
     [
         'title' => 'Permissions',

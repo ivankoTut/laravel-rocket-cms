@@ -27,4 +27,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * admin settings
+     * */
+    public $admin = [
+        'section' => 'users',
+        'icon' => 'fa fa-users',
+        'priority' => 1,
+    ];
 }

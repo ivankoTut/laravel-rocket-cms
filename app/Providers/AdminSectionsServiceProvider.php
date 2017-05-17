@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Admin\Widgets\NavigationUserBlock;
 use App\Models\CmsModels\Page;
 use App\Models\CmsModels\TypePage;
+use App\Models\CmsModels\User;
 use Illuminate\Routing\Router;
 use SleepingOwl\Admin\Contracts\Navigation\NavigationInterface;
 use SleepingOwl\Admin\Contracts\Template\MetaInterface;
@@ -24,6 +25,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
     protected $sections = [
         TypePage::class => \App\Admin\CmsModels\TypePage::class,
         Page::class => \App\Admin\CmsModels\Page::class,
+        User::class => \App\Admin\CmsModels\User::class,
     ];
 
     /**
