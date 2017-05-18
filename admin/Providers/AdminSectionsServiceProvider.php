@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace Admin\Providers;
 
-use App\Admin\Widgets\NavigationUserBlock;
+use Admin\Widgets\NavigationUserBlock;
 use App\Models\CmsModels\Page;
 use App\Models\CmsModels\TypePage;
 use App\Models\CmsModels\User;
@@ -23,9 +23,9 @@ class AdminSectionsServiceProvider extends ServiceProvider
      * @var array
      */
     protected $sections = [
-        TypePage::class => \App\Admin\CmsModels\TypePage::class,
-        Page::class => \App\Admin\CmsModels\Page::class,
-        User::class => \App\Admin\CmsModels\User::class,
+        TypePage::class => \Admin\CmsModels\TypePage::class,
+        Page::class => \Admin\CmsModels\Page::class,
+        User::class => \Admin\CmsModels\User::class,
     ];
 
     /**
@@ -36,7 +36,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
     public function boot(\SleepingOwl\Admin\Admin $admin)
     {
         $this->loadViewsFrom(base_path("resources/views/admin"), 'admin_cms');
-
+        $this->app->call([$this, 'registerNavigation']);
         parent::boot($admin);
 
         $this->app->call([$this, 'registerViews']);
@@ -49,6 +49,14 @@ class AdminSectionsServiceProvider extends ServiceProvider
         foreach ($this->widgets as $widget) {
             $widgetsRegistry->registerWidget($widget);
         }
+    }
+
+    /**
+     * @param NavigationInterface $navigation
+     */
+    public function registerNavigation(NavigationInterface $navigation)
+    {
+        require base_path('admin/navigation.php');
     }
 
 

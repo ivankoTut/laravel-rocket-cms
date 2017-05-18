@@ -1,6 +1,7 @@
 <?php
-namespace App\Admin\CmsModels;
+namespace Admin\CmsModels;
 
+use AdminColumn;
 use AdminDisplay;
 use AdminForm;
 use AdminFormElement;
@@ -15,7 +16,7 @@ use SleepingOwl\Admin\Contracts\Initializable;
  *
  * @see http://sleepingowladmin.ru/docs/model_configuration_section
  */
-class Page extends Section implements Initializable
+class TypePage extends Section implements Initializable
 {
     /**
      * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
@@ -36,14 +37,16 @@ class Page extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->title = trans('cms.admin.nav.page');
+        $this->title = trans('cms.admin.nav.type_page');
     }
     /**
      * @return DisplayInterface
      */
     public function onDisplay()
     {
-        return AdminDisplay::tree()->setValue('title');
+        return AdminDisplay::table()->setColumns([
+            AdminColumn::link('name', 'Name'),
+        ])->paginate(5);
     }
     /**
      * @param int $id
@@ -53,10 +56,7 @@ class Page extends Section implements Initializable
     public function onEdit($id)
     {
         return AdminForm::panel()->addBody([
-            AdminFormElement::text('title', 'Title')->required(),
-            AdminFormElement::select('type_page_id', trans('cms.admin.nav.type_page'), \App\Models\CmsModels\TypePage::class)->setDisplay('name'),
-            AdminFormElement::text('slug', 'Slug')->required(),
-            AdminFormElement::textarea('text', 'Text')
+            AdminFormElement::text('name', 'Name')->required(),
         ]);
     }
     /**

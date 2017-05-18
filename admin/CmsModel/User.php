@@ -1,5 +1,5 @@
 <?php
-namespace App\Admin\CmsModels;
+namespace Admin\CmsModels;
 
 use AdminDisplay;
 use AdminForm;

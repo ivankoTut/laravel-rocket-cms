@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Widgets;
+namespace Admin\Widgets;
 
 use AdminTemplate;
 use SleepingOwl\Admin\Widgets\Widget;

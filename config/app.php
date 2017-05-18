@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
-        \App\Providers\AdminSectionsServiceProvider::class,
+        Admin\Providers\AdminSectionsServiceProvider::class,
         Arrilot\Widgets\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
