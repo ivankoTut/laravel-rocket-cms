@@ -1,6 +1,11 @@
 <?php
 use SleepingOwl\Admin\Navigation\Page;
 
+/**
+ * @var \SleepingOwl\Admin\Contracts\Navigation\NavigationInterface $navigation
+ * @see http://sleepingowladmin.ru/docs/menu_configuration
+ */
+
 $navigation->setFromArray([
     [
         'title' => trans('cms.admin.nav.navigation'),
@@ -17,10 +22,10 @@ $navigation->setFromArray([
         'title' => 'Permissions',
         'icon' => 'fa fa-group',
         'pages' => [
-            (new Page(\App\Models\CmsModels\User::class))
+            /*(new Page(\App\Models\CmsModels\User::class))
                 ->setIcon('fa fa-user')
                 ->setPriority(0),
-            /*(new Page(\App\Role::class))
+            (new Page(\App\Role::class))
                 ->setIcon('fa fa-group')
                 ->setPriority(100)*/
         ]
