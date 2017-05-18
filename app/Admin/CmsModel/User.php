@@ -3,6 +3,7 @@ namespace App\Admin\CmsModels;
 
 use AdminDisplay;
 use AdminForm;
+use AdminColumn;
 use AdminFormElement;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
