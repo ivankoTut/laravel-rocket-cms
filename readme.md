@@ -1,6 +1,4 @@
-<p align="center">
-    <h1>Laravel Rocket CMS</h1>
-</p>
+<h1 align="center">Laravel Rocket CMS</h1>
 
 <p align="center">
 <a href="https://travis-ci.org/ivankoTut/laravel-rocket-cms"><img src="https://api.travis-ci.org/ivankoTut/laravel-rocket-cms.svg?branch=develop" alt="Build Status"></a>
