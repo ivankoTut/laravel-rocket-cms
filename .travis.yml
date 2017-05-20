@@ -16,10 +16,10 @@ before_script:
   - cp .env.travis .env
   - mysql -u root -e 'create database test;'
   - composer self-update
-  - composer install --dev --prefer-source --no-interaction
+  - composer install
   - php artisan vendor:publish
   - php artisan key:generate
-  - php artisan migrate:install --env=testing --no-interaction
+  - php artisan migrate:install
   - php artisan db:seed
   - composer dump-autoload
   - sudo chgrp -R www-data storage bootstrap/cache
