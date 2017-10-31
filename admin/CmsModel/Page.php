@@ -53,6 +53,7 @@ class Page extends Section implements Initializable
     public function onEdit($id)
     {
         return AdminForm::panel()->addBody([
+            AdminFormElement::checkbox('show', 'Show'),
             AdminFormElement::text('title', 'Title')->required(),
             AdminFormElement::select('type_page_id', trans('cms.admin.nav.type_page'), \App\Models\CmsModels\TypePage::class)->setDisplay('name'),
             AdminFormElement::text('slug', 'Slug')->required(),

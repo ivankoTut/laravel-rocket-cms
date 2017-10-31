@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', ['as' => 'main', 'uses' => 'Controller@index']);
-
 Auth::routes();
+
+Route::get('/', ['as' => 'main', 'uses' => 'Controller@mainPage']);
+
+Route::resource('pages', 'PagesController', ['only' => ['index', 'show']]);

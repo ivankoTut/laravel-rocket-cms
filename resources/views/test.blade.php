@@ -18,7 +18,6 @@
     <![endif]-->
 </head>
 <body>
-<h1>Hello, world!</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -26,6 +25,9 @@
             {!! print_menu() !!}
 
         </div>
+    </div>
+    <div class="row">
+        @yield('content')
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
