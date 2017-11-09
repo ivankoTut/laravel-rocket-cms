@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Services\PageServices;
-use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
@@ -15,7 +14,7 @@ class PagesController extends Controller
     {
         $pages = $pageServices->getAllPagesPaginate(3);
 
-        return view('pages.index', compact('pages'));
+        return render_view(compact('pages'));
     }
 
     /**
@@ -27,7 +26,7 @@ class PagesController extends Controller
     {
         $page = $pageServices->getPageBySlug($slug);
 
-        return view('pages.show', compact('page'));
+        return render_view(compact('page'));
     }
 
 

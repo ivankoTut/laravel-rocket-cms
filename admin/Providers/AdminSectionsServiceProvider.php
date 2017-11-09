@@ -3,17 +3,20 @@
 namespace Admin\Providers;
 
 use Admin\Widgets\NavigationUserBlock;
+use App\Models\CmsModels\ContactMessage;
 use App\Models\CmsModels\Page;
 use App\Models\CmsModels\TypePage;
 use App\Models\CmsModels\User;
 use Illuminate\Routing\Router;
-use SleepingOwl\Admin\Contracts\Navigation\NavigationInterface;
 use SleepingOwl\Admin\Contracts\Template\MetaInterface;
+use SleepingOwl\Admin\Contracts\Navigation\NavigationInterface;
 use SleepingOwl\Admin\Contracts\Widgets\WidgetsRegistryInterface;
 use SleepingOwl\Admin\Providers\AdminSectionsServiceProvider as ServiceProvider;
 
 class AdminSectionsServiceProvider extends ServiceProvider
 {
+
+    static $r = 0;
 
     protected $widgets = [
         NavigationUserBlock::class,
@@ -26,6 +29,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         TypePage::class => \Admin\CmsModels\TypePage::class,
         Page::class => \Admin\CmsModels\Page::class,
         User::class => \Admin\CmsModels\User::class,
+        ContactMessage::class => \Admin\CmsModels\ContactMessage::class
     ];
 
     /**

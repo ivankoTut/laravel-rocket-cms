@@ -17,7 +17,7 @@ before_script:
   - mysql -u root -e 'create database test;'
   - composer self-update
   - composer install
-  - php artisan vendor:publish
+  - php artisan vendor:publish Co--force
   - php artisan key:generate
   - php artisan migrate
   - php artisan db:seed

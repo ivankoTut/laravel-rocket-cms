@@ -4,8 +4,6 @@ namespace App\Models\CmsModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
-use SleepingOwl\Admin\Model\ModelConfiguration;
-use AdminSection;
 
 class Page extends Model
 {

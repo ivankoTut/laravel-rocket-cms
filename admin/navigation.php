@@ -19,6 +19,11 @@ $navigation->setFromArray([
         'pages' => app('App\Services\AdminServices')->initAdminMenu('users')
     ],
     [
+        'title' => trans('cms.admin.nav.service'),
+        'icon' => 'fa fa-cog',
+        'pages' => app('App\Services\AdminServices')->initAdminMenu('service')
+    ],
+    [
         'title' => 'Permissions',
         'icon' => 'fa fa-group',
         'pages' => [

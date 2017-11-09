@@ -16,7 +16,7 @@ use SleepingOwl\Admin\Contracts\Initializable;
  *
  * @see http://sleepingowladmin.ru/docs/model_configuration_section
  */
-class User extends Section implements Initializable
+class ContactMessage extends Section implements Initializable
 {
     /**
      * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
@@ -37,7 +37,7 @@ class User extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->title = trans('cms.admin.nav.user');
+        $this->title = trans('cms.admin.nav.contact_message');
     }
     /**
      * @return DisplayInterface
@@ -46,7 +46,8 @@ class User extends Section implements Initializable
     {
         return AdminDisplay::table()->setColumns([
             AdminColumn::link('name', 'Name'),
-            AdminColumn::link('email', 'Email'),
+            AdminColumn::text('email', 'Email'),
+            AdminColumn::text('phone', 'Phone'),
         ])->paginate(15);
     }
     /**
@@ -58,6 +59,9 @@ class User extends Section implements Initializable
     {
         return AdminForm::panel()->addBody([
             AdminFormElement::text('name', 'Name')->required(),
+            AdminFormElement::text('email', 'Email'),
+            AdminFormElement::text('phone', 'Phone'),
+            AdminFormElement::textarea('content', 'Content')->required(),
         ]);
     }
     /**
